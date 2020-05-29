@@ -1,0 +1,20 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+
+ENTITY game_controller IS
+
+PORT	(SIGNAL Clock, Bt1, Bt2, Bt3, SW1, Win : IN std_logic;
+		SIGNAL Level : OUT std_logic_vector(2 DOWNTO 0);
+		SIGNAL Red_out, Green_out, Blue_out : OUT std_logic;
+				);
+
+END ENTITY game_controller;
+
+architecture behavior of game_controller is
+
+Red_out <= '1';
+Green_out <= '1';
+Blue_out <= '1';
+

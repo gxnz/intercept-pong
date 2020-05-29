@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Miniproject22">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_jvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_gvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_rom:inst2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult0" CBX_FILE_NAME="mult_g4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult4" CBX_FILE_NAME="mult_g4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_jvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_mult:Mult0" CBX_FILE_NAME="mult_s6t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pll:inst4|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult1" CBX_FILE_NAME="mult_g4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult5" CBX_FILE_NAME="mult_g4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_gvo.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|char_gen:inst1|lpm_mult:Mult1" CBX_FILE_NAME="mult_s6t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|game_controller:inst8|Game_Pause:pau0|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|game_controller:inst8|Game_over:over0|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|game_controller:inst8|Game_win:win0|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult6" CBX_FILE_NAME="mult_g4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|game_controller:inst8|Main_menu:main0|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Miniproject22|pong_game:inst11|lpm_mult:Mult3" CBX_FILE_NAME="mult_g4t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

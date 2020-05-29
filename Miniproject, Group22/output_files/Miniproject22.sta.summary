@@ -1,0 +1,545 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -92.277
+TNS   : -270.671
+
+Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -3.808
+TNS   : -255.299
+
+Type  : Slow 1200mV 85C Model Setup 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -2.162
+TNS   : -166.966
+
+Type  : Slow 1200mV 85C Model Setup 'game_controller:inst8|CS.GamePause'
+Slack : -1.905
+TNS   : -1.905
+
+Type  : Slow 1200mV 85C Model Setup 'pong_game:inst11|collision_2'
+Slack : -1.824
+TNS   : -10.584
+
+Type  : Slow 1200mV 85C Model Setup 'pong_game:inst11|collision_1'
+Slack : -1.822
+TNS   : -9.216
+
+Type  : Slow 1200mV 85C Model Setup 'pong_game:inst11|collision'
+Slack : -1.821
+TNS   : -8.842
+
+Type  : Slow 1200mV 85C Model Setup 'clk_divider:inst21|temp_clk'
+Slack : -1.505
+TNS   : -11.811
+
+Type  : Slow 1200mV 85C Model Setup 'pong_game:inst11|Score_win'
+Slack : -0.846
+TNS   : -2.095
+
+Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : -0.567
+TNS   : -4.555
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : 16.518
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.773
+TNS   : -15.041
+
+Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -0.342
+TNS   : -16.260
+
+Type  : Slow 1200mV 85C Model Hold 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.188
+TNS   : -0.894
+
+Type  : Slow 1200mV 85C Model Hold 'clk_divider:inst21|temp_clk'
+Slack : -0.080
+TNS   : -0.080
+
+Type  : Slow 1200mV 85C Model Hold 'game_controller:inst8|CS.GamePause'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pong_game:inst11|Score_win'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pong_game:inst11|collision_1'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pong_game:inst11|collision'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : 0.676
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pong_game:inst11|collision_2'
+Slack : 0.864
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.903
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk_divider:inst21|temp_clk'
+Slack : -3.844
+TNS   : -30.752
+
+Type  : Slow 1200mV 85C Model Recovery 'pong_game:inst11|collision_2'
+Slack : -2.513
+TNS   : -19.744
+
+Type  : Slow 1200mV 85C Model Recovery 'pong_game:inst11|collision'
+Slack : -2.491
+TNS   : -19.928
+
+Type  : Slow 1200mV 85C Model Recovery 'pong_game:inst11|collision_1'
+Slack : -1.983
+TNS   : -15.108
+
+Type  : Slow 1200mV 85C Model Recovery 'pong_game:inst11|Score_win'
+Slack : -0.510
+TNS   : -0.510
+
+Type  : Slow 1200mV 85C Model Recovery 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.215
+TNS   : -3.435
+
+Type  : Slow 1200mV 85C Model Removal 'pong_game:inst11|collision_1'
+Slack : -1.065
+TNS   : -8.397
+
+Type  : Slow 1200mV 85C Model Removal 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.759
+TNS   : -12.064
+
+Type  : Slow 1200mV 85C Model Removal 'pong_game:inst11|Score_win'
+Slack : -0.707
+TNS   : -0.707
+
+Type  : Slow 1200mV 85C Model Removal 'pong_game:inst11|collision_2'
+Slack : -0.588
+TNS   : -3.660
+
+Type  : Slow 1200mV 85C Model Removal 'pong_game:inst11|collision'
+Slack : -0.412
+TNS   : -3.296
+
+Type  : Slow 1200mV 85C Model Removal 'clk_divider:inst21|temp_clk'
+Slack : 0.909
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -1.000
+TNS   : -92.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -1.000
+TNS   : -90.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_divider:inst21|temp_clk'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pong_game:inst11|collision'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pong_game:inst11|collision_1'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pong_game:inst11|collision_2'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pong_game:inst11|Score_win'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'game_controller:inst8|CS.GamePause'
+Slack : 0.395
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.689
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.600
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -82.221
+TNS   : -238.498
+
+Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -3.323
+TNS   : -225.904
+
+Type  : Slow 1200mV 0C Model Setup 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -1.854
+TNS   : -141.564
+
+Type  : Slow 1200mV 0C Model Setup 'game_controller:inst8|CS.GamePause'
+Slack : -1.803
+TNS   : -1.803
+
+Type  : Slow 1200mV 0C Model Setup 'pong_game:inst11|collision_2'
+Slack : -1.496
+TNS   : -8.510
+
+Type  : Slow 1200mV 0C Model Setup 'pong_game:inst11|collision_1'
+Slack : -1.494
+TNS   : -7.376
+
+Type  : Slow 1200mV 0C Model Setup 'pong_game:inst11|collision'
+Slack : -1.494
+TNS   : -7.038
+
+Type  : Slow 1200mV 0C Model Setup 'clk_divider:inst21|temp_clk'
+Slack : -1.477
+TNS   : -11.623
+
+Type  : Slow 1200mV 0C Model Setup 'pong_game:inst11|Score_win'
+Slack : -0.649
+TNS   : -1.485
+
+Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : -0.398
+TNS   : -2.922
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : 16.869
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.523
+TNS   : -6.555
+
+Type  : Slow 1200mV 0C Model Hold 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.302
+TNS   : -1.458
+
+Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -0.256
+TNS   : -10.635
+
+Type  : Slow 1200mV 0C Model Hold 'clk_divider:inst21|temp_clk'
+Slack : -0.034
+TNS   : -0.034
+
+Type  : Slow 1200mV 0C Model Hold 'pong_game:inst11|Score_win'
+Slack : 0.242
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'game_controller:inst8|CS.GamePause'
+Slack : 0.282
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pong_game:inst11|collision'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pong_game:inst11|collision_1'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pong_game:inst11|collision_2'
+Slack : 0.782
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.832
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk_divider:inst21|temp_clk'
+Slack : -3.342
+TNS   : -26.736
+
+Type  : Slow 1200mV 0C Model Recovery 'pong_game:inst11|collision_2'
+Slack : -2.110
+TNS   : -16.576
+
+Type  : Slow 1200mV 0C Model Recovery 'pong_game:inst11|collision'
+Slack : -2.103
+TNS   : -16.824
+
+Type  : Slow 1200mV 0C Model Recovery 'pong_game:inst11|collision_1'
+Slack : -1.637
+TNS   : -12.403
+
+Type  : Slow 1200mV 0C Model Recovery 'pong_game:inst11|Score_win'
+Slack : -0.555
+TNS   : -0.555
+
+Type  : Slow 1200mV 0C Model Recovery 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.322
+TNS   : -5.109
+
+Type  : Slow 1200mV 0C Model Removal 'pong_game:inst11|collision_1'
+Slack : -0.943
+TNS   : -7.425
+
+Type  : Slow 1200mV 0C Model Removal 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.523
+TNS   : -8.278
+
+Type  : Slow 1200mV 0C Model Removal 'pong_game:inst11|Score_win'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Slow 1200mV 0C Model Removal 'pong_game:inst11|collision_2'
+Slack : -0.506
+TNS   : -3.046
+
+Type  : Slow 1200mV 0C Model Removal 'pong_game:inst11|collision'
+Slack : -0.341
+TNS   : -2.728
+
+Type  : Slow 1200mV 0C Model Removal 'clk_divider:inst21|temp_clk'
+Slack : 0.877
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -1.000
+TNS   : -92.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -1.000
+TNS   : -90.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_divider:inst21|temp_clk'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision_1'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision_2'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|Score_win'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'game_controller:inst8|CS.GamePause'
+Slack : 0.420
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.684
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.605
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -51.824
+TNS   : -155.895
+
+Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -1.856
+TNS   : -125.861
+
+Type  : Fast 1200mV 0C Model Setup 'game_controller:inst8|CS.GamePause'
+Slack : -1.068
+TNS   : -1.068
+
+Type  : Fast 1200mV 0C Model Setup 'clk_divider:inst21|temp_clk'
+Slack : -0.884
+TNS   : -6.930
+
+Type  : Fast 1200mV 0C Model Setup 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.827
+TNS   : -55.665
+
+Type  : Fast 1200mV 0C Model Setup 'pong_game:inst11|collision_2'
+Slack : -0.578
+TNS   : -2.585
+
+Type  : Fast 1200mV 0C Model Setup 'pong_game:inst11|collision_1'
+Slack : -0.574
+TNS   : -2.191
+
+Type  : Fast 1200mV 0C Model Setup 'pong_game:inst11|collision'
+Slack : -0.573
+TNS   : -2.188
+
+Type  : Fast 1200mV 0C Model Setup 'pong_game:inst11|Score_win'
+Slack : -0.088
+TNS   : -0.159
+
+Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : 0.097
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : 17.920
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.593
+TNS   : -18.964
+
+Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -0.237
+TNS   : -12.365
+
+Type  : Fast 1200mV 0C Model Hold 'clk_divider:inst21|temp_clk'
+Slack : -0.193
+TNS   : -0.410
+
+Type  : Fast 1200mV 0C Model Hold 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.138
+TNS   : -0.651
+
+Type  : Fast 1200mV 0C Model Hold 'game_controller:inst8|CS.GamePause'
+Slack : 0.017
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pong_game:inst11|Score_win'
+Slack : 0.085
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pong_game:inst11|collision_1'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pong_game:inst11|collision'
+Slack : 0.195
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pong_game:inst11|collision_2'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk_divider:inst21|temp_clk'
+Slack : -1.895
+TNS   : -15.160
+
+Type  : Fast 1200mV 0C Model Recovery 'pong_game:inst11|collision_2'
+Slack : -1.031
+TNS   : -8.038
+
+Type  : Fast 1200mV 0C Model Recovery 'pong_game:inst11|collision'
+Slack : -1.019
+TNS   : -8.152
+
+Type  : Fast 1200mV 0C Model Recovery 'pong_game:inst11|collision_1'
+Slack : -0.715
+TNS   : -5.272
+
+Type  : Fast 1200mV 0C Model Recovery 'pong_game:inst11|Score_win'
+Slack : -0.326
+TNS   : -0.326
+
+Type  : Fast 1200mV 0C Model Recovery 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.123
+TNS   : -1.927
+
+Type  : Fast 1200mV 0C Model Removal 'pong_game:inst11|collision_1'
+Slack : -0.716
+TNS   : -5.669
+
+Type  : Fast 1200mV 0C Model Removal 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -0.594
+TNS   : -9.394
+
+Type  : Fast 1200mV 0C Model Removal 'pong_game:inst11|Score_win'
+Slack : -0.532
+TNS   : -0.532
+
+Type  : Fast 1200mV 0C Model Removal 'pong_game:inst11|collision_2'
+Slack : -0.430
+TNS   : -2.924
+
+Type  : Fast 1200mV 0C Model Removal 'pong_game:inst11|collision'
+Slack : -0.341
+TNS   : -2.728
+
+Type  : Fast 1200mV 0C Model Removal 'clk_divider:inst21|temp_clk'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MOUSE:inst6|MOUSE_CLK_FILTER'
+Slack : -1.000
+TNS   : -92.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst3|vert_sync_out'
+Slack : -1.000
+TNS   : -90.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst3|horiz_sync_out'
+Slack : -1.000
+TNS   : -10.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_divider:inst21|temp_clk'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision_1'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|collision_2'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pong_game:inst11|Score_win'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'game_controller:inst8|CS.GamePause'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.444
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst4|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.613
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,18 @@
+
+State Machine - |Miniproject22|MOUSE:inst6|mouse_state
+Name mouse_state.INPUT_PACKETS mouse_state.WAIT_CMD_ACK mouse_state.WAIT_OUTPUT_READY mouse_state.LOAD_COMMAND2 mouse_state.LOAD_COMMAND mouse_state.INHIBIT_TRANS 
+mouse_state.INHIBIT_TRANS 0 0 0 0 0 0 
+mouse_state.LOAD_COMMAND 0 0 0 0 1 1 
+mouse_state.LOAD_COMMAND2 0 0 0 1 0 1 
+mouse_state.WAIT_OUTPUT_READY 0 0 1 0 0 1 
+mouse_state.WAIT_CMD_ACK 0 1 0 0 0 1 
+mouse_state.INPUT_PACKETS 1 0 0 0 0 1 
+
+State Machine - |Miniproject22|game_controller:inst8|CS
+Name CS.Gameover CS.Gamewin CS.GamePause CS.Training CS.Game CS.Main 
+CS.Main 0 0 0 0 0 0 
+CS.Game 0 0 0 0 1 1 
+CS.Training 0 0 0 1 0 1 
+CS.GamePause 0 0 1 0 0 1 
+CS.Gamewin 0 1 0 0 0 1 
+CS.Gameover 1 0 0 0 0 1 

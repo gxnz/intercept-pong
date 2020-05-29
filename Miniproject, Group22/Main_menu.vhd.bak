@@ -1,0 +1,67 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+--USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY Main_menu IS
+	PORT
+	(
+		clock				: 	IN STD_LOGIC ;
+		pixel_row_input : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+		pixel_column_input : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+
+
+		Red,Green,Blue : OUT STD_LOGIC;
+		);
+END ENTITY Main_menu;
+
+Architecture menu of Main_menu is 
+--signal address_var,address_hundred_score,address_hundred_time,address_ten_score,address_ten_time,address_one_score,address_one_time, address_level : STD_LOGIC_VECTOR (5 DOWNTO 0);
+--signal int_score,int_time,int_hundred_score,int_ten_score,int_one_score,int_hundred_time,int_ten_time,int_one_time :  integer:=1;
+	 signal Main_on, rom_on : std_logic;
+	 signal address_var ; std_logic_vector(5 downto 0);
+begin
+	CHAR: char_rom
+		PORT MAP(character_address	=> address_var, font_row => pixel_row(3 DOWNTO 1), font_col => pixel_column(3 DOWNTO 1),
+					clock => clock, rom_mux_output => rom_on);
+
+Red <= '1' when (Main_on = '1' AND rom_on = '1')	 else '0';
+Green <= '1' when (Main_on = '1' AND rom_on = '1')	 else '0';
+Blue <= '1' when (Main_on = '1' AND rom_on = '1')	 else '0';
+conversion: process( pixel_column_input,pixel_row_input)
+begin
+	
+	if (pixel_column_input >=16)and (pixel_column_input<32)and (pixel_row_input >=16)and (pixel_row_input<32) then
+	address_var<= "010011";
+	Main_on <= '1';
+	
+	--S
+	elsif ((pixel_column_input >=32)and (pixel_column_input<48))and (pixel_row_input >=16)and (pixel_row_input<32) then
+	address_var<= "000011";
+	Main_on <= '1';
+	--C
+	elsif ((pixel_column_input >=48)and (pixel_column_input<64))and (pixel_row_input >=16)and (pixel_row_input<32) then
+	address_var<= "001111";
+	Main_on <= '1';
+	--O
+	elsif ((pixel_column_input >=64)and (pixel_column_input<80))and (pixel_row_input >=16)and (pixel_row_input<32) then
+	address_var<= "010010";
+	Main_on <= '1';
+	--R
+	elsif ((pixel_column_input >=80)and (pixel_column_input<96))and (pixel_row_input >=16)and (pixel_row_input<32) then
+	address_var<= "000101";
+	Main_on <= '1';
+	--E
+	
+	else
+	address_var<= "100000";--Space for the other situation
+	end if;--spoace
+	
+end process conversion;
+
+
+
+
+
+end Architecture menu;

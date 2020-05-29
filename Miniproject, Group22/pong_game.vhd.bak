@@ -1,0 +1,228 @@
+-- Bouncing Ball Video 
+--
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+LIBRARY lpm;
+USE lpm.lpm_components.ALL;
+
+PACKAGE de0core IS
+	COMPONENT vga_sync
+ 		PORT(clock_25Mhz, red, green, blue	: IN	STD_LOGIC;
+         	red_out, green_out, blue_out	: OUT 	STD_LOGIC;
+			horiz_sync_out, vert_sync_out	: OUT 	STD_LOGIC;
+			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0));
+	END COMPONENT;
+END de0core;
+
+			-- Bouncing Ball Video 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_SIGNED.all;
+LIBRARY work;
+USE work.de0core.all;
+
+ENTITY ball IS
+Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
+
+   PORT(SIGNAL PB1, PB2, Clock, vert_sync_in, horiz_sync_in 			: IN std_logic;
+			SIGNAL mouse_column 		: IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL mouse_row 		: IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL rom_mux_input	:	IN std_logic;
+			SIGNAL lfsr				:	IN	std_logic_vector(10 DOWNTO 0);
+			SIGNAL pixel_row_in : IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL pixel_column_in : IN std_logic_vector(9 DOWNTO 0);
+        SIGNAL Red_out,Green_out,Blue_out		  : OUT std_logic;
+--        SIGNAL Horiz_sync,Vert_sync		: OUT std_logic;
+--		SIGNAL pixel_row_output : OUT std_logic_vector(9 DOWNTO 0);
+--		SIGNAL pixel_column_output : OUT std_logic_vector(9 DOWNTO 0);
+		SIGNAL ledenable : OUT std_logic);
+END ball;
+
+architecture behavior of ball is
+
+			-- Video Display Signals   
+SIGNAL Red_Data, Green_Data, Blue_Data, vert_sync_int, horiz_sync_int,
+		reset, Ball_on, Direction, Platform_on, v_ledenable			: std_logic;
+--------------------------------------------------------------------------------
+--Signals for Default Ball 0
+--------------------------------------------------------------------------------
+SIGNAL Size 								: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Ball_Y_motion, Ball_X_motion 			: std_logic_vector(9 DOWNTO 0);
+SIGNAL Ball_Y_pos, Ball_X_pos				: std_logic_vector(10 DOWNTO 0);
+--------------------------------------------------------------------------------
+--Signals for Default Ball 1
+--------------------------------------------------------------------------------
+SIGNAL Size_1 								: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Ball_1_Y_motion, Ball_1_X_motion 			: std_logic_vector(9 DOWNTO 0);
+SIGNAL Ball_1_Y_pos, Ball_1_X_pos				: std_logic_vector(10 DOWNTO 0);
+--------------------------------------------------------------------------------
+--Signals for Default Ball 2
+--------------------------------------------------------------------------------
+SIGNAL Size_2 								: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Ball_2_Y_motion, Ball_2_X_motion 			: std_logic_vector(9 DOWNTO 0);
+SIGNAL Ball_2_Y_pos, Ball_2_X_pos				: std_logic_vector(10 DOWNTO 0);
+--------------------------------------------------------------------------------
+--Signals for Default platform 
+--------------------------------------------------------------------------------
+SIGNAL Platform_Size_X,Platform_Size_Y,Platform_Size 		: std_logic_vector(9 DOWNTO 0);  
+SIGNAL Platform_Y_motion 						: std_logic_vector(9 DOWNTO 0);
+SIGNAL Platform_Y_pos, Platform_X_pos				: std_logic_vector(10 DOWNTO 0);
+
+
+SIGNAL pixel_row, pixel_column				: std_logic_vector(9 DOWNTO 0); 
+
+SIGNAL collision							: std_logic := '0';
+
+BEGIN           
+
+--   SYNC: vga_sync
+-- 		PORT MAP(clock_25Mhz => clock, 
+--				red => red_data, green => green_data, blue => blue_data,	
+--    	     	red_out => red, green_out => green, blue_out => blue,
+--			 	horiz_sync_out => horiz_sync_int, vert_sync_out => vert_sync_int,
+--			 	pixel_row => pixel_row, pixel_column => pixel_column);
+--
+--pixel_row_output <= pixel_row;
+--pixel_column_output <= pixel_column;
+
+Size <= CONV_STD_LOGIC_VECTOR(11,10);
+
+Platform_Size <= CONV_STD_LOGIC_VECTOR(12,10);
+Platform_Size_X <= CONV_STD_LOGIC_VECTOR(20,10);
+Platform_Size_Y <= CONV_STD_LOGIC_VECTOR(5,10);
+Platform_Y_pos <= CONV_STD_LOGIC_VECTOR(465,11);
+-------------------------------------------------------------------
+--Initialise Position Of balls--------------------???????????????
+--Ball_X_pos <=
+--Ball_Y_pos <=
+--Ball_Y_motion <=
+--Ball_X_motion <=
+-------------------------------------------------------------------
+
+		-- need internal copy of vert_sync to read
+--vert_sync <= vert_sync_in;
+--horiz_sync <= horiz_sync_in;
+
+		-- Colors for pixel data on video signal
+Red_out <= Ball_on OR NOT(  Platform_on OR '0');
+Blue_out <= NOT (rom_mux_input or Ball_on);
+Green_out <= NOT((Ball_on or Platform_on) OR '0');
+
+pixel_row <= pixel_row_in;
+pixel_column <= pixel_column_in;
+
+ledenable <= v_ledenable;
+
+RGB_Display: Process (Ball_X_pos, Ball_Y_pos, pixel_column, pixel_row, Size, Platform_Y_pos, Platform_X_pos, v_ledenable)
+BEGIN
+			-- Set Ball_on ='1' to display ball
+ IF ("00" & Ball_X_pos <= ('0' & pixel_column) + ('0' & Size)) AND
+ 			-- compare positive numbers only
+ 	(Ball_X_pos + Size >= '0' & pixel_column) AND
+ 	('0' & Ball_Y_pos <= pixel_row + Size) AND
+ 	(Ball_Y_pos + Size >= '0' & pixel_row ) THEN
+ 		Ball_on <= '1';
+		--Detect Collision
+		IF ((Ball_Y_pos > Platform_Y_pos - 24) and (Ball_X_pos < Platform_X_pos + 24) and (Ball_X_pos > Platform_X_pos - 24)) THEN
+		--v_ledenable <= '1';
+		collision <= '1';
+		else 
+		--v_ledenable <= '0';
+		collision <= '0';
+		
+		END IF;
+		
+ 	ELSE
+ 		Ball_on <= '0';
+END IF;
+END process RGB_Display;
+
+RGB_Display_Platform: Process (Platform_X_pos, Platform_Y_pos, pixel_column, pixel_row, Platform_Size_X,Platform_Size_Y)
+BEGIN
+			-- Set Platform_on ='1' to display platform
+	IF ("00" & Platform_X_pos <= (('0' & pixel_column) + ('0'& Platform_Size_X) )) AND
+ 			-- compare positive numbers only
+		(Platform_X_pos + Platform_Size_X >= '0' & pixel_column) AND
+		--('0' & Platform_Y_pos <= pixel_row + Platform_Size) AND
+	 	('0' & Platform_Y_pos <= (pixel_row + Platform_Size_Y)) AND
+		(Platform_Y_pos + Platform_Size_Y >= '0' & pixel_row ) THEN
+ 		Platform_on <= '1';
+ 	ELSE
+ 		Platform_on <= '0';
+END IF;
+END process RGB_Display_Platform;
+
+Move_Ball_Y: process
+BEGIN 
+			-- Move ball once every vertical sync
+	WAIT UNTIL vert_sync_in'event and vert_sync_in = '1';
+			-- If collision happens
+			IF (collision = '0') then
+		
+			-- Bounce off top or bottom of screen
+			IF ('0' & Ball_Y_pos) >= CONV_STD_LOGIC_VECTOR(480,10) - Size THEN
+				Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(5,10);
+			ELSIF Ball_Y_pos <= Size THEN
+				Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+			END IF;
+			 --Compute next ball Y position
+				Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;	
+			-- Bounce off left or right of screen
+			IF ('0' & Ball_X_pos) >= CONV_STD_LOGIC_VECTOR(640,11) - Size THEN
+				Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(4,10);
+			ELSIF ('0' & Ball_X_pos) <= Size THEN
+				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+			END IF;
+			 --Compute next ball X position
+				Ball_X_pos <= Ball_X_pos + Ball_X_motion;
+				
+			ELSE
+			Ball_X_pos <= (lfsr);
+			Ball_Y_pos <= CONV_STD_LOGIC_VECTOR(10,11);
+			Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(1,10);
+			Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(8,10);
+			END IF;
+		
+--		IF ((Ball_Y_pos > Platform_Y_pos - 24) and (Ball_X_pos < Platform_X_pos + 24) and (Ball_X_pos > Platform_X_pos - 24)) THEN
+--		--v_ledenable <= '1';
+--		Ball_X_pos <= CONV_STD_LOGIC_VECTOR(60,11);
+-- 		Ball_Y_pos <= CONV_STD_LOGIC_VECTOR(5,11);
+--		else 
+--		v_ledenable <= '0';
+--		
+--		END IF;
+--				
+
+				
+END process Move_Ball_Y;
+
+--Move_Ball_X: process
+--BEGIN
+--
+--	WAIT UNTIL horiz_sync_int'event and horiz_sync_int = '1';
+--			-- Bounce off left or right of screen
+--			IF ('0' & Ball_X_pos) >= CONV_STD_LOGIC_VECTOR(640,10) - Size THEN
+--				Ball_X_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+--			ELSIF Ball_X_pos <= Size THEN
+--				Ball_X_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+--			END IF;
+--			 --Compute next ball X position
+--				Ball_X_pos <= Ball_X_pos + Ball_X_motion;
+--
+--				
+--				--Ball_X_pos <= '0' & mouse_column;
+--				
+--END process Move_Ball_X;
+
+
+Move_Platform_X: process
+BEGIN
+WAIT UNTIL HORIZ_sync_in'event and horiz_sync_in = '1';
+Platform_X_pos <= '0' & mouse_column;
+END process Move_Platform_X;
+
+
+END behavior;

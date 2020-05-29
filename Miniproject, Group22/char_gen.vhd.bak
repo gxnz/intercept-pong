@@ -1,0 +1,26 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+
+ENTITY char_gen IS
+	PORT
+	(
+		clock				: 	IN STD_LOGIC ;
+		pixel_row_input : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+		pixel_column_input : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+		character_address_output	:	OUT STD_LOGIC_VECTOR (5 DOWNTO 0);
+		font_row_output, font_col_output	:	OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+
+	);
+END ENTITY char_gen;
+
+Architecture beh of char_gen is 
+begin
+
+character_address_output <= "000005" WHEN pixel_row_input(3 DOWNTO 0) < "1000" AND pixel_column_input(3 DOWNTO 0) < "1000";--else
+									 --"000002" WHEN pixel_row_input(4 DOWNTO 0) < "10000" AND pixel_column_input(4 DOWNTO 0) < "10000"else 
+
+
+
+end Architecture beh;
